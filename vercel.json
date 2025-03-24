@@ -1,8 +1,13 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(?<apiname>[^/]+)",
-      "dest": "api/$apiname.js",
+      "source": "/api/(.*)",
+      "destination": "https://www.60score.com/api/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
       "headers": {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
