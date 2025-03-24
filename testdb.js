@@ -1,6 +1,12 @@
 const fs = require('fs').promises;
 const path = require('path');
-require('dotenv').config({ path: '.env.development.local' });
+
+// 动态环境配置（优化版）
+require('dotenv').config({
+  path: process.env.VERCEL 
+    ? null  // Vercel 环境不使用 .env 文件
+    : `.env.${process.env.NODE_ENV || 'development'}.local`
+});
 
 const { createClient } = require('@supabase/supabase-js');
 

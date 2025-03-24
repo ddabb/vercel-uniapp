@@ -59,11 +59,9 @@
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "fishbb": "^1.0.25",
-    "fs": "^0.0.1-security",
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
     "markdown-it-mathjax3": "^4.3.2",
-    "path": "^0.12.7",
     "vue": "3.4.21",
     "vue-i18n": "9.14.3",
     "yargs": "^17.7.2"
@@ -81,6 +79,7 @@
     "node-stdlib-browser": "^1.2.0",
     "process": "^0.11.10",
     "vite": "5.2.8",
+    "vite-plugin-environment": "^1.1.3",
     "vite-plugin-node-polyfills": "^0.23.0"
   }
 }
