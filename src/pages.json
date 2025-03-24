@@ -1,0 +1,94 @@
+{
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "UniApp 示例",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom",
+		"mp-weixin": {
+			"navigationStyle": "custom"
+		}
+	},
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+			  "navigationBarTitleText": "测试页面"
+			}
+		  },
+		
+		{
+			"path": "pages/dynasties/dynasties",
+			"style": {
+				"navigationBarTitleText": "朝代列表"
+			}
+		},
+		{
+			"path": "pages/poets/poets",
+			"style": {
+				"navigationBarTitleText": "诗人列表"
+			}
+		},
+		{
+			"path": "pages/poetDetail/poetDetail",
+			"style": {
+				"navigationBarTitleText": "诗人详情"
+			}
+		},
+		{
+			"path": "pages/photos/photos",
+			"style": {
+				"navigationBarTitleText": "相册"
+			}
+		},
+		{
+			"path": "pages/ideas/ideas",
+			"style": {
+				"navigationBarTitleText": "想法"
+			}
+		},
+		{
+			"path": "pages/officialAccount/officialAccount",
+			"style": {
+				"navigationBarTitleText": "公众号"
+			}
+		},
+		{
+			"path": "pages/tools/tools",
+			"style": {
+				"navigationBarTitleText": "工具"
+			}
+		},
+		{
+			"path": "pages/games/games",
+			"style": {
+				"navigationBarTitleText": "游戏"
+			}
+		},
+		{
+			"path": "pages/poetry/poetry",
+			"style": {
+				"navigationBarTitleText": "诗词"
+			}
+		},
+		{
+			"path": "pages/aboutUs/aboutUs",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+		},
+		{
+			"path": "pages/contactUs/contactUs",
+			"style": {
+				"navigationBarTitleText": "联系我们"
+			}
+		}
+	]
+}
