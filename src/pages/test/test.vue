@@ -2,6 +2,12 @@
   <view>
     <!-- 保留原有跨站请求部分 -->
     <button @click="fetchData">获取跨站消息</button>
+    
+    <!-- 新增消息展示 -->
+    <view v-if="message" class="result-container">
+      <text class="section-title">跨站消息结果：</text>
+      <pre class="operation-data">{{ message }}</pre>
+    </view>
 
     <!-- 增强数据库操作显示 -->
     <button @click="fetchDbData">测试完整DB流程</button>
