@@ -11,19 +11,18 @@
 	},
 	"pages": [
 		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "测试页面"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页",
 				"navigationStyle": "custom"
 			}
 		},
-		{
-			"path": "pages/test/test",
-			"style": {
-			  "navigationBarTitleText": "测试页面"
-			}
-		  },
-		
 		{
 			"path": "pages/dynasties/dynasties",
 			"style": {

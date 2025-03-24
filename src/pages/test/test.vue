@@ -19,7 +19,7 @@ const fetchData = async () => {
   loading.value = true;
   try {
     // 直接使用 api/hello
-    const apiUrl = 'api/hello';
+    const apiUrl = '/api/hello';
     console.log('url:', apiUrl);
     // 使用 fetch 替代 axios
     const response = await fetch(apiUrl);

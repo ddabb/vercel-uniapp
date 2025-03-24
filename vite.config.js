@@ -22,7 +22,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000', // 假设本地 API 服务器运行在 3000 端口
+        target: 'https://www.60score.com', // 假设本地 API 服务器运行在 3000 端口
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api')
       }
