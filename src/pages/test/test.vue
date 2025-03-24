@@ -2,7 +2,7 @@
   <view>
     <text>{{ message }}</text>
     <!-- 添加一个按钮来触发请求 -->
-    <button @click="fetchData">获取消息</button>
+    <button @click="fetchData">获取跨站消息</button>
     <!-- 显示加载状态 -->
     <text v-if="loading">加载中...</text>
   </view>
