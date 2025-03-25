@@ -37,8 +37,9 @@
         </view>
       </view>
     </view>
-    <Footer />
+
   </view>
+  <Footer />
 </template>
 
 <script>

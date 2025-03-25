@@ -1,4 +1,5 @@
 <template>
+    <Header />
   <view>
     <!-- 保留原有跨站请求部分 -->
     <button @click="fetchData">获取跨站消息</button>
@@ -24,10 +25,16 @@
       </view>
     </view>
   </view>
+  <Footer />
 </template>
 <script setup>
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 import { ref, onMounted } from 'vue';
 import { insertData, selectData, updateData, deleteData } from '@/utils/dbService';
+
+
+       
 const message = ref('');
 // 添加加载状态
 const loading = ref(false);
