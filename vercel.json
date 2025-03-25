@@ -24,5 +24,11 @@
       ]
     }
   ],
-  "public": true
+
+  "files": [
+    {
+      "src": "public/fd2239ef3d6d1d22675241761f857e99.txt",
+      "dest": "fd2239ef3d6d1d22675241761f857e99.txt"
+    }
+  ]
 }
