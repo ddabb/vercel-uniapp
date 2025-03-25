@@ -4,28 +4,28 @@
       <div class="container-fluid">
         <ul class="navbar-nav d-flex flex-row scrolling-menu">
           <li class="nav-item">
-            <router-link class="nav-link d-flex align-items-center" to="/">
+            <navigator url="/" open-type="navigate">
               <img src="@/static/logo.svg" alt="Logo" style="max-width: 24px; max-height: 24px; margin-right:1px;">
               自助工具站
-            </router-link>
+            </navigator>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/photos">📷相册</router-link>
+            <navigator url="/pages/photos/photos" open-type="navigate">📷相册</navigator>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/ideas">💡想法</router-link>
+            <navigator url="/pages/ideas/ideas" open-type="navigate">💡想法</navigator>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/officialAccount">🗣️公众号</router-link>
+            <navigator url="/pages/officialAccount/officialAccount" open-type="navigate">🗣️公众号</navigator>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/tools">🔧工具</router-link>
+            <navigator url="/pages/tools/tools" open-type="navigate">🔧工具</navigator>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/games">🎮游戏</router-link>
+            <navigator url="/pages/games/games" open-type="navigate">🎮游戏</navigator>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/poetry">📜诗词</router-link>
+            <navigator url="/pages/poetry/poetry" open-type="navigate">📜诗词</navigator>
           </li>
         </ul>
       </div>
