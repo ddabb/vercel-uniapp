@@ -215,7 +215,7 @@ header {
 
 #search-button-md {
     padding: 10px 20px;
-    background: #007bff;
+    background: #007bff !important;
     color: #fff;
     border: none;
     border-radius: 0 5px 5px 0;

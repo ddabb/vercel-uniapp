@@ -80,3 +80,28 @@ export async function deleteData() {
         return { data, error };
     });
 }
+
+
+// 分页获取 wechat_articles 表中的文章数据，支持根据标题搜索
+export async function getWechatArticles(page = 1, limit = 10, searchQuery = '') {
+    try {
+        const offset = (page - 1) * limit;
+        let query = supabase
+           .from('wechat_articles')
+           .select('*')
+           .range(offset, offset + limit - 1);
+
+        if (searchQuery) {
+            query = query.ilike('title', `%${searchQuery}%`);
+        }
+
+        const { data, error } = await query;
+        if (error) {
+            throw error;
+        }
+        return data;
+    } catch (error) {
+        console.error('Failed to fetch wechat articles:', error);
+        return [];
+    }
+}
