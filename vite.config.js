@@ -25,8 +25,17 @@ export default defineConfig({
         target: 'https://www.60score.com', // 假设本地 API 服务器运行在 3000 端口
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api')
+      },
+      '^/[^/]+$': {
+        target: 'http://localhost:5173',
+        rewrite: (path) => `/public${path}`,
+        changeOrigin: true
       }
-    }
+    },
+    static: {
+      // 配置静态文件服务的目录
+      dirs: ['public'],
+    },
   },
   build: {
     target: 'esnext',
