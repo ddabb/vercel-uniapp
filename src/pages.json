@@ -10,6 +10,13 @@
 		}
 	},
 	"pages": [
+		
+		{
+			"path": "pages/helloworld/helloworld",
+			"style": {
+				"navigationBarTitleText": "Hello World 页面"
+			}
+		},
 		{
 			"path": "pages/test/test",
 			"style": {
