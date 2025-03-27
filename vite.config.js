@@ -6,23 +6,23 @@ import path from 'path'
 export default defineConfig({
   plugins: [
     nodePolyfills({
-      include: ['path', 'fs', 'util', 'stream', 'constants', 'assert'], // 重新包含fs模块
-      globals: { 
-        Buffer: true,
-        process: true  // 添加process全局变量
-      }
+      include: ['path', 'fs', 'util', 'stream', 'constants', 'assert'],
+      globals: { Buffer: true, process: true }
     }),
-    uni()
+    // 关键修改：在uni插件中强制设置output格式为es
+    uni({
+      outputFormat: 'es' // 设置uni插件输出格式为es
+    })
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src') // 添加路径别名
+      '@': path.resolve(__dirname, './src')
     }
   },
   server: {
     proxy: {
       '/api': {
-        target: 'https://www.60score.com', // 假设本地 API 服务器运行在 3000 端口
+        target: 'https://www.60score.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api')
       },
@@ -33,12 +33,21 @@ export default defineConfig({
       }
     },
     static: {
-      // 配置静态文件服务的目录
-      dirs: ['public'],
-    },
+      dirs: ['public']
+    }
   },
   build: {
     target: 'esnext',
-    assetsInlineLimit: 4096 // 调整资源内联阈值
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        format: 'es', // 确保Vite的输出格式为es
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        }
+      }
+    }
   }
 })
