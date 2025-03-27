@@ -159,7 +159,8 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-image: url('/logo.svg');
+    /* 修改为相对路径 */
+    background-image: url('@/static/logo.svg');
     background-size: cover;
     flex-shrink: 0;
     margin-right: 10px;
@@ -171,7 +172,7 @@ header {
     object-fit: cover;
     background-color: #ccc;
     border-radius: 50%;
-    background-image: url('/user.png');
+    background-image: url('@/static/user.png');
     flex-shrink: 0;
 }
 
