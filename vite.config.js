@@ -9,9 +9,7 @@ export default defineConfig({
       include: ['path', 'fs', 'util', 'stream', 'constants', 'assert'],
       globals: { Buffer: true, process: true }
     }),
-    uni({
-      outputFormat: 'es'
-    })
+    uni()
   ],
   resolve: {
     alias: {
@@ -36,11 +34,11 @@ export default defineConfig({
     }
   },
   build: {
-    target: 'es2015', // 修改为更兼容的版本
-    assetsInlineLimit: 4096,
+    target: 'esnext', // 修改为更兼容的版本
+    assetsInlineLimit: 4096
 
-    lib: { name: 'main', entry: 'src/main.js', formats: ['es']
+    // lib: { name: 'main', entry: 'src/main.js', formats: ['es']
     }
 
   }
-});    
+);    
