@@ -19,10 +19,10 @@
                 <span class="article-category" @click="navigateToCategory(article.category)">
                   {{ article.category }}
                 </span>
-                <navigator :url="`/pages/mdhtml/${encodeURIComponent(article.fileName)}`">
+                <view @click="goToArticle(article.title)">
                   {{ article.title }}
-                </navigator>
-                <span class="article-date">{{ formatDate(article.updateTime) }}</span>
+                </view>
+                <span class="article-date">{{ formatDate(article.created_at) }}</span>
               </li>
             </ul>
             <view id="pagination-md">
@@ -37,14 +37,14 @@
         </view>
       </view>
     </view>
-
   </view>
   <Footer />
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+import { getMdFiles } from  '@/utils/dbService'; // 引入新的查询方法
 
 export default {
   data() {
@@ -54,8 +54,7 @@ export default {
       currentPage: 1,
       pageSize: 12,
       totalPages: 1,
-      paginationPages: [],
-      callType: 'md' // 确保 callType 正确初始化
+      paginationPages: []
     };
   },
   components: {
@@ -63,6 +62,11 @@ export default {
     Footer
   },
   methods: {
+    goToArticle(title) {
+      uni.navigateTo({
+        url: `/pages/article/article?title=${encodeURIComponent(title)}`
+      });
+    },
     createPagination() {
       this.paginationPages = [];
       let startPage = Math.max(1, this.currentPage - 3);
@@ -84,7 +88,7 @@ export default {
     },
     goToPage(pageNumber) {
       if (pageNumber !== null) {
-        this.fetchArticles(this.keyword, pageNumber, this.callType);
+        this.fetchArticles(this.keyword, pageNumber);
       }
     },
     formatDate(timestamp) {
@@ -97,37 +101,27 @@ export default {
       });
     },
     async onSearch() {
-      await this.fetchArticles(this.keyword, 1, this.callType);
+      this.currentPage = 1; // 搜索时重置到第一页
+      await this.fetchArticles(this.keyword, 1);
     },
-    async fetchArticles(keyword = '', page = 1, callType = 'md') {
-  try {
-    const response = await uni.request({
-      url: `/api/getjson?keyword=${keyword}&pageSize=${this.pageSize}&page=${page}&calltype=${callType}`, // 调用API
-      method: 'GET'
-    });
-    debugger;
-    console.log('Response:', response); // 添加调试信息
+    async fetchArticles(keyword = '', page = 1) {
+      try {
+        const response = await getMdFiles(page, this.pageSize, keyword);
 
-    // 假设响应结构是 [response, data]
-    const { data } = response[1];
+        // 更新数据
+        this.articles = response.articles;
+        this.currentPage = response.currentPage;
+        this.totalPages = response.totalPages;
 
-    // 检查数据是否存在
-    if (!data) {
-      throw new Error('No data returned from API');
+        // 创建分页
+        this.createPagination();
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+      }
     }
-
-    const { articles, currentPage, totalPages, pageSize } = data;
-    this.articles = articles;
-    this.totalPages = totalPages;
-    this.currentPage = currentPage;
-    this.createPagination();
-  } catch (error) {
-    console.error('Error fetching articles:', error);
-  }
-},
+  },
   created() {
-    console.log('callType:', this.callType); // 使用 created 生命周期钩子
-    this.fetchArticles('', 1, this.callType);
+    this.fetchArticles('', 1); // 初始化加载数据
   }
-}}
+};
 </script>

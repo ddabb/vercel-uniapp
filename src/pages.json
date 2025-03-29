@@ -94,6 +94,20 @@
 			"style": {
 				"navigationBarTitleText": "联系我们"
 			}
+		},
+		{
+			"path": "pages/article/article",
+			"style": {
+				"navigationBarTitleText": "文章详情",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/categorydetail/categorydetail",
+			"style": {
+				"navigationBarTitleText": "分类详情",
+				"navigationStyle": "custom"
+			}
 		}
 	]
 }
