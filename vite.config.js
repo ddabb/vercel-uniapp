@@ -41,7 +41,7 @@ export default defineConfig({
     target: 'esnext', // 修改为更兼容的版本
     assetsInlineLimit: 4096,
 
-     lib: { name: 'main', entry: 'src/main.js', formats: ['es'] }
+    // lib: { name: 'main', entry: 'src/main.js', formats: ['es'] }
   }
   }
 );
