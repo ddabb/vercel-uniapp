@@ -109,5 +109,22 @@
 				"navigationStyle": "custom"
 			}
 		}
+		,
+		{
+			"path": "pages/category/category",
+			"style": {
+				"navigationBarTitleText": "分类列表",
+				"navigationStyle": "custom"
+			}
+		}
+		,
+		{
+			"path": "pages/tag/tag",
+			"style": {
+				"navigationBarTitleText": "标签列表",
+				"navigationStyle": "custom"
+			}
+		}
+		
 	]
 }
