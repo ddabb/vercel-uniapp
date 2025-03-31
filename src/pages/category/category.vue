@@ -33,7 +33,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import { getCategories } from '@/services/dbService';
+import { getCategories } from '@/utils/dbService';
 
 export default {
     components: {
