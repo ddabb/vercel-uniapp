@@ -3,7 +3,11 @@ import uni from '@dcloudio/vite-plugin-uni';
 import { nodePolyfills } from 'vite-plugin-node-polyfills';
 import path from 'path';
 
+// 根据平台动态设置 base
+const base = process.env.UNI_PLATFORM === 'h5' ? '/' : './';
+
 export default defineConfig({
+  base: base,
   plugins: [
     nodePolyfills({
       include: ['path', 'fs', 'util', 'stream', 'constants', 'assert'],
@@ -40,4 +44,4 @@ export default defineConfig({
      lib: { name: 'main', entry: 'src/main.js', formats: ['es'] }
   }
   }
-);    
+);
