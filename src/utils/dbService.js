@@ -121,12 +121,13 @@ export async function getMdFiles(page = 1, limit = 10, keyword = '') {
 
         // 如果有关键字，则进行多字段过滤
         if (keyword) {
+            // 精准匹配标题或模糊匹配其他字段
             query = query.or(
-                `title.ilike.%${keyword}%,category.ilike.%${keyword}%,description.ilike.%${keyword}%,content.ilike.%${keyword}%`
+                `title.eq.${keyword},category.ilike.%${keyword}%,description.ilike.%${keyword}%,content.ilike.%${keyword}%,tags.cs.{"${keyword}"}`
             );
-
-            // 特殊处理 tags 数组字段
-            query = query.contains('tags', [keyword]);
+            
+            // 移除原来的 contains 条件
+            // query = query.contains('tags', [keyword]);
         }
 
         // 执行查询
