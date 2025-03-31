@@ -15,7 +15,7 @@
     "dev:mp-kuaishou": "uni -p mp-kuaishou",
     "dev:mp-lark": "uni -p mp-lark",
     "dev:mp-qq": "uni -p mp-qq",
-    "build:mp-android": "uni build -p mp-android",
+    "build:mp-android": "uni build --platform mp-android",
     "dev:mp-toutiao": "uni -p mp-toutiao",
     "dev:mp-weixin": "uni -p mp-weixin",
     "dev:mp-xhs": "uni -p mp-xhs",
