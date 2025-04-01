@@ -42,8 +42,7 @@ export default defineConfig({
   },
   build: {
     sourcemap: true,
-    target: 'esnext', // 修改为更兼容的版本
-    assetsInlineLimit: 4096,
+    target: 'esnext',
     // 动态调整 lib 配置
     ...(process.env.UNI_PLATFORM !== 'h5' && {
       lib: {
@@ -53,25 +52,7 @@ export default defineConfig({
       }
     }),
     rollupOptions: {
-      external: ['vue'], // 将vue标记为外部依赖
-      output: {
-        format: 'iife', // 确保使用立即执行函数格式
-        globals: {
-          vue: 'Vue' // 指定全局Vue变量
-        },
-        // 添加以下配置处理worker文件
-        manualChunks(id) {
-          if (id.includes('app-service.js')) {
-            return 'app-service'
-          }
-        }
-      }
-    }
-  },
-  // 添加worker配置
-  worker: {
-    format: 'iife', // worker也使用iife格式
-    rollupOptions: {
+      external: ['vue', 'qrcode'],
       output: {
         globals: {
           vue: 'Vue'
