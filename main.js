@@ -1,5 +1,6 @@
 import App from './App'
-import uni from '@dcloudio/uni-app' // 将 uni 导入移到条件编译块外部
+// 修改 uni 的导入方式
+import * as uni from '@dcloudio/uni-app' // 使用命名空间导入
 
 // #ifndef VUE3
 import Vue from 'vue'

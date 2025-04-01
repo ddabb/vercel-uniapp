@@ -82,7 +82,23 @@
 <script>
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import VueQrcode from '@chenfengyuan/vue-qrcode'; // 使用标准库
+
+// 条件导入处理
+let VueQrcode;
+if (process.env.VUE_APP_PLATFORM === 'h5') {
+  VueQrcode = require('@chenfengyuan/vue-qrcode').default;
+} else {
+  // 非H5平台使用uni-app兼容方案
+  VueQrcode = {
+    template: '<view><image :src="qrImageUrl" mode="widthFix"></image></view>',
+    props: ['value'],
+    computed: {
+      qrImageUrl() {
+        return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(this.value)}`;
+      }
+    }
+  };
+}
 
 export default {
   components: {

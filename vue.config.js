@@ -6,8 +6,20 @@ module.exports = {
     entry: path.resolve(__dirname, 'main.js'),
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src')
+        '@': path.resolve(__dirname, 'src'),
+        // 添加 uni-app 相关别名
+        '@dcloudio/uni-app': path.resolve(__dirname, 'node_modules/@dcloudio/uni-app/dist/uni-app.es.js')
       }
+    },
+    // 添加模块解析配置
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          loader: 'babel-loader',
+          include: [path.resolve(__dirname, 'src')]
+        }
+      ]
     }
   },
   chainWebpack: config => {
@@ -34,3 +46,12 @@ module.exports = {
     }
   }
 }
+
+module.exports = {
+  configureWebpack: {
+    externals: process.env.VUE_APP_PLATFORM === 'h5' ? {} : {
+      '@chenfengyuan/vue-qrcode': 'VueQrcode'
+    }
+  },
+  transpileDependencies: ['@chenfengyuan/vue-qrcode']
+};
