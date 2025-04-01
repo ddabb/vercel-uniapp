@@ -15,7 +15,7 @@ app.$mount()
 
 // #ifdef VUE3
 import { createSSRApp } from 'vue'
-import uni from '@dcloudio/uni-app' // 引入 uni 库
+// 移除重复的 uni 导入，使用上面已经导入的 uni
 
 export function createApp() {
   const app = createSSRApp(App)
