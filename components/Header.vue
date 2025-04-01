@@ -42,7 +42,7 @@ export default {
       "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",
       "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js",
       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js",
-      "src/static/js/clarity.js",
+      "/static/js/clarity.js",  // 修改为绝对路径
       "https://cdn.jsdelivr.net/npm/widget-qrcode@1.0.4/dist/widget-qrcode.min.js"
     ];
     scripts.forEach(src => {

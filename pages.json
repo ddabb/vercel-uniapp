@@ -108,16 +108,14 @@
 				"navigationBarTitleText": "分类详情",
 				"navigationStyle": "custom"
 			}
-		}
-		,
+		},
 		{
 			"path": "pages/category/category",
 			"style": {
 				"navigationBarTitleText": "分类列表",
 				"navigationStyle": "custom"
 			}
-		}
-		,
+		},
 		{
 			"path": "pages/tag/tag",
 			"style": {
@@ -125,6 +123,5 @@
 				"navigationStyle": "custom"
 			}
 		}
-		
 	]
 }
