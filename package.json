@@ -10,6 +10,7 @@
 		"build:android-app": "uni build --platform app-plus --mode release"
 	},
 	"dependencies": {
+		"@dcloudio/uni-app": "^2.0.2-4050720250324001",
 		"@supabase/supabase-js": "^2.49.4"
 	},
 	"devDependencies": {
