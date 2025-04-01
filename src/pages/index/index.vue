@@ -125,3 +125,127 @@ export default {
   }
 };
 </script>
+<style scoped>
+/* 核心布局调整 */
+.container-fluid {
+  padding: 0 20rpx;
+  /* 增加左右内边距 */
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+/* 卡片容器优化 */
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 40rpx;
+}
+
+.card-header {
+  padding: 30rpx 20rpx 10rpx;
+  border-bottom: 1px solid #eee;
+}
+
+/* 搜索区域优化 */
+.search-container {
+  display: flex;
+  gap: 20rpx;
+  margin: 30rpx 0;
+}
+
+input[type="text"] {
+  flex: 1;
+  height: 80rpx;
+  padding: 0 30rpx;
+  border-radius: 40rpx;
+  border: 1px solid #eee;
+  font-size: 28rpx;
+}
+
+button {
+  padding: 0 40rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background: #007bff;
+  color: white;
+  border: none;
+  font-size: 28rpx;
+}
+
+/* 文章列表优化 */
+.article-container {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+/* 移动端隐藏分类和日期 */
+@media (max-width: 768px) {
+  .article-category,
+  .article-date {
+    display: none !important;
+  }
+  
+  .article-container > view {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.article-category {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 8rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  margin-right: 20rpx;
+}
+
+.article-title {
+  font-size: 32rpx;
+  color: #333;
+  margin: 10rpx 0;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-date {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: auto;
+}
+
+/* 分页控件优化 */
+#pagination-md {
+  display: flex;
+  justify-content: center;
+  gap: 15rpx;
+  padding: 40rpx 0;
+}
+
+button[active] {
+  background: #007bff;
+  color: white;
+  border-radius: 30rpx;
+  padding: 15rpx 40rpx;
+}
+
+button:not([active]) {
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 30rpx;
+  padding: 15rpx 40rpx;
+}
+</style>
