@@ -136,3 +136,4 @@ dist
 .pnp.*
 .vercel
 unpackage/resources/__UNI__63EA24E/www/__uniappautomator.js
+.vs/
