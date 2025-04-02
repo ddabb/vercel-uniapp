@@ -1,6 +1,5 @@
-import App from './App'
-// 修改 uni 的导入方式
-import * as uni from '@dcloudio/uni-app' // 使用命名空间导入
+import App from './App'  // 确保路径正确
+import * as uni from '@dcloudio/uni-app'
 
 // #ifndef VUE3
 import Vue from 'vue'

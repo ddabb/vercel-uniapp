@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   outputDir: path.resolve(__dirname, 'dist/build/h5'),
   configureWebpack: {
-    entry: path.resolve(__dirname, 'main.js'),
+    entry: path.resolve(__dirname, 'src/main.js'), // 修改为新的路径
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),
@@ -33,7 +33,7 @@ module.exports = {
       return args
     })
     
-    // 添加静态文件复制配置
+    // 确保静态资源路径正确
     config.plugin('copy').use(require('copy-webpack-plugin'), [{
       patterns: [
         {
