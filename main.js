@@ -1,4 +1,4 @@
-import App from './App'  // 确保路径正确
+import App from './App.vue'  // 修改为相对路径
 import * as uni from '@dcloudio/uni-app'
 
 // #ifndef VUE3
@@ -18,7 +18,7 @@ import { createSSRApp } from 'vue'
 
 export function createApp() {
   const app = createSSRApp(App)
-  app.config.globalProperties.$uni = uni // 添加到全局属性
+  app.config.globalProperties.$uni = uni
   return {
     app
   }
