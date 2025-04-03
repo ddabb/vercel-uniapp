@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import uni from '@dcloudio/vite-plugin-uni';
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
-import path from 'path';
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
+import { nodePolyfills } from 'vite-plugin-node-polyfills'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -13,7 +13,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-        '@': path.resolve(__dirname, './src').replace(/\\/g, '/') // 转换为正斜杠[7](@ref)
+      '@': path.resolve(__dirname, './src').replace(/\\/g, '/') // 转换为正斜杠
     }
   },
   server: {
@@ -35,10 +35,6 @@ export default defineConfig({
   },
   build: {
     target: 'esnext', // 修改为更兼容的版本
-    assetsInlineLimit: 4096
-
-    // lib: { name: 'main', entry: 'src/main.js', formats: ['es']
-    }
-
-  }
-);    
+    assetsInlineLimit: 4096}
+    // ,lib: { name: 'main', entry: 'src/main.js', formats: ['es']  }}
+})
